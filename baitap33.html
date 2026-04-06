@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đèn kéo quân</title>
+
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+}
+
+.scene {
+    perspective: 1000px;
+}
+
+.cylinder {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 8s linear infinite;
+}
+
+.cylinder:hover {
+    animation-play-state: paused;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #fff;
+    overflow: hidden;
+}
+
+.face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Định vị 6 mặt */
+.face1 { transform: rotateY(0deg) translateZ(150px); }
+.face2 { transform: rotateY(60deg) translateZ(150px); }
+.face3 { transform: rotateY(120deg) translateZ(150px); }
+.face4 { transform: rotateY(180deg) translateZ(150px); }
+.face5 { transform: rotateY(240deg) translateZ(150px); }
+.face6 { transform: rotateY(300deg) translateZ(150px); }
+
+/* Animation quay */
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(360deg); }
+}
+</style>
+
+</head>
+<body>
+
+<div class="scene">
+    <div class="cylinder">
+
+        <div class="face face1"><img src="images/1.jpg"></div>
+        <div class="face face2"><img src="images/2.jpg"></div>
+        <div class="face face3"><img src="images/3.jpg"></div>
+        <div class="face face4"><img src="images/4.jpg"></div>
+        <div class="face face5"><img src="images/5.jpg "></div>
+        <div class="face face6"><img src="images/6.jpg "></div>
+
+    </div>
+</div>
+
+</body>
+</html>
